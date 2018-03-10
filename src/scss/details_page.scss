@@ -6,12 +6,18 @@ $lightergray: #F5F5F5;
 $turquoise: #5BD6FD;
 $darkgray: #707070;
 
+$lighterpurple: #C9CDE5;
+$lightpurple: #DBDFFE;
+$mediumlightpurple: #767A91;
+$mediumpurple: #64687F;
+$darkpurple: #4B4F65;
+
 .container-detail {
 	display: flex;
 	flex-direction: column;
 
 	.sidebar {
-		width: 90vw;
+		width: 100vw;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -35,16 +41,15 @@ $darkgray: #707070;
 			width: 50%;
 			height: 10vh;
 			margin: 0;
-			align-self: flex-start;
-			margin-left: 5%;
-			margin-top: 5%;
+			margin-left: 10%;
+			margin-top: 10%;
 
 			@media screen and (min-width: 600px) {
 				background-image: url(../img/logo.png);
 				background-repeat: no-repeat;
 				background-size: contain;
 				width: 33vw;
-				height: 8vh;
+				height: 4vh;
 				margin-top: 0;
 				margin-left: 2.5%;
 			}
@@ -110,7 +115,7 @@ $darkgray: #707070;
 			}
 
 			.special-year {
-				color: $mediumlightpurple;
+				color: $mediumpurple;
 				font-size: 1.2rem;
 			}
 		}
@@ -268,7 +273,7 @@ $darkgray: #707070;
 
 		.fact1 {
 			.fact-background {
-				background: #fff;
+				background: #F9FAFA;
 				padding: 5%;
 
 

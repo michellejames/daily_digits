@@ -63,6 +63,8 @@ let importData = {
       subline: "Note: a mass shooting is defined by the U.S. government as having at least four victims", 
     },
   ],
+  detailContent: [
+  ],
 };
 
 console.log(importData);

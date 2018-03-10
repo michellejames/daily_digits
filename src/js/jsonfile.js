@@ -1,4 +1,4 @@
-let day = new Date();
+let today = new Date();
 
 let weekday = new Array(7);
 weekday[0] =  "Sunday";
@@ -8,7 +8,7 @@ weekday[3] = "Wednesday";
 weekday[4] = "Thursday";
 weekday[5] = "Friday";
 weekday[6] = "Saturday";
-let currentWeekday = weekday[day.getDay()];
+let currentWeekday = weekday[today.getDay()];
 
 let month = new Array();
     month[0] = "January";
@@ -24,11 +24,11 @@ let month = new Array();
     month[10] = "November";
     month[11] = "December";
 
-let currentMonth = month[day.getMonth()];
+let currentMonth = month[today.getMonth()];
 
-let currentDay = day.getDate();
+let currentDay = today.getDate();
 
-let currentYear = day.getFullYear();
+let currentYear = today.getFullYear();
 console.log(currentWeekday, currentMonth, currentDay, currentYear);
 
 
@@ -67,6 +67,16 @@ let importData = {
       category: "Culture",
     },
   ],
+  // detailContent: {
+  //   fact1: {
+  //     factCategoryHighlight: "Statistics: ",
+  //     factCategory: "Culture",
+  //     factHeadline: "Black Panther grossed",
+  //     factSubline: "in it's",
+  //     factSublineHighlight: "opening weekend",
+  //     factDetail: "Black Panther recorded the highest pre-sale tickets sold for a superhero movie, outselling Captain America and Batman vs. Superman.",
+  //   }
+  // }
 };
 
 console.log(importData);

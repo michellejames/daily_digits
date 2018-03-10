@@ -24,6 +24,7 @@ var myLineChart = new Chart(ctx, {
 var doughnutChart = new Chart(document.getElementById("doughnut-chart"), {
   type: 'doughnut',
   data: {
+    // labels: ["Black Panther", "Spiderman: Homecoming", "Captain Amerika"],
     datasets: [{
       label: "Population (millions)",
       backgroundColor: ["#fff", "rgb(111,212,252)", "#C1C1C1"],
@@ -31,4 +32,11 @@ var doughnutChart = new Chart(document.getElementById("doughnut-chart"), {
     }]
   }
 });
+
+var tl = new TimelineLite();
+tl.staggerFrom(".bar", 2, { width: 0 }, 0.2);
+tl.from(".country"), 2, { opacity: 0 };
+
+// TweenMax.to(".fact-animation4", 2, {left: 0;});
+// TweenMax.from(".fact-animation5", 2, {height: "0vh";});
 //# sourceMappingURL=detail_page.js.map
