@@ -11,8 +11,22 @@ TABLE OF CONTENTS:
 
 ==============================================
 */
+$blue: #4094EF;
+$lightblue: #6FD4FC;
+$darkblue: #416DB6;
+$lightgray: #C1C1C1;
+$lightergray: #F5F5F5;
+$turquoise: #5BD6FD;
+$darkgray: #707070;
+
+$lighterpurple: #C9CDE5;
+$lightpurple: #DBDFFE;
+$mediumlightpurple: #767A91;
+$mediumpurple: #64687F;
+$darkpurple: #4B4F65;
 
 @import 'reset';
+@import 'details_page';
 @import 'masonry-grid';
 
 
@@ -28,13 +42,6 @@ body {
 }
 
 
-$blue: #4094EF;
-$lightblue: #6FD4FC;
-$darkblue: #416DB6;
-$lightgray: #C1C1C1;
-$lightergray: #F5F5F5;
-$turquoise: #5BD6FD;
-$darkgray: #707070;
 
 .container {
 	display: flex;
@@ -45,30 +52,36 @@ $darkgray: #707070;
 	}
 
 	.sidebar {
-		width: 100vw;
+		width: 90vw;
 		height: 38vh;
 		margin-left: 10%;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		justify-content: center;
 
 		@media screen and (min-width: 600px) {
+			justify-content: space-between;
 			width: 30vw;
 			height: 100vh;
 			margin-left: 5%;
+			position: fixed;
 		}
 
 		.dd-logo {
 			background-image: url(../img/logo.png);
 			background-repeat: no-repeat;
 			background-size: contain;
-			//width: 50vw;
+			width: 50%;
 			height: 10vh;
-			margin-top: 5%;
+			margin: 0;
+			align-self: flex-start;
+
+			@media screen and (min-width: 600px) {
+			}
 		}
 
 		.current-text {
-			//margin-left: 10%;
+			// margin-left: 10%;
 			font-family: 'Roboto', sans-serif;
 
 			@media screen and (min-width: 600px) {
@@ -86,35 +99,100 @@ $darkgray: #707070;
 				font-weight: 300;
 			}
 
+			.special-weekday {
+				font-size: 1.2rem;
+				font-weight: 300;
+				color: $mediumlightpurple;
+			}
+
 			.current-date {
 				color: $blue;
 				font-size: 2rem;
+				display: flex;
+
+				.current-month {
+					margin-right: .5rem;
+				}
+
+				.special-month {
+					color: $mediumlightpurple;
+					font-size: 2rem;
+					display: flex;
+					margin-right: .5rem;
+				}
+
+				.special-day {
+					color: $mediumlightpurple;
+				}
 			}
 
 			.current-year {
 				color: $lightgray;
 				font-size: 1.2rem;
 			}
+
+			.special-year {
+				color: $mediumlightpurple;
+				font-size: 1.2rem;
+			}
 		}
 
 		.controlls {
-			//margin-left: 10%;
+			display: flex;
+			margin-top: 5%;
+
+			@media screen and (min-width: 600px) {
+				margin-top: 10%;
+			}
 
 			.arrow {
-				color: $lightgray;
-				font-size: 2rem;
-				margin-right: 5%;
-				transition: .5s all;
+				background-repeat: no-repeat;
+				background-size: contain;
+				width: 40px;
+				height: 15px;
+				transition: .4s all;
+			}
+
+			.arrow-left {
+				background-image: url(../img/arrow-unselected-left.png);
+				margin-right: 20px;
 
 				&:hover {
-					color: $blue;
+					background-image: url(../img/arrow-selected-left.png);
+				}
+			}
+
+			.arrow-right {
+				background-image: url(../img/arrow-unselected-right.png);
+
+				&:hover {
+					background-image: url(../img/arrow-selected-right.png);
+				}
+			}
+		}
+
+		.controlls-special {
+			.arrow-left {
+				background-image: url(../img/arrow-unselected-left.png);
+				margin-right: 20px;
+
+				&:hover {
+					background-image: url(../img/arrow-selected-left_purple.png);
+				}
+			}
+
+			.arrow-right {
+				background-image: url(../img/arrow-unselected-right.png);
+
+				&:hover {
+					background-image: url(../img/arrow-selected-right_purple.png);
 				}
 			}
 		}
 
 		.social-media-sidebar {
 			display: flex;
-			height: 100px;
+			height: 10vh;
 			display: none;
 
 			@media screen and (min-width: 600px) {
@@ -128,6 +206,11 @@ $darkgray: #707070;
 			.icons {
 				color: $darkgray;
 				font-size: 2rem;
+				transition: .5s all;
+
+				&:hover {
+					color: $blue;
+				}
 
 				@media screen and (min-width: 600px) {
 					font-size: 1rem;
@@ -147,73 +230,80 @@ $darkgray: #707070;
 			width: 70vw;
 			height: 100vh;
 			position: relative;
+			margin-left: 30vw;
 		}
 
 		.article {
 			width: 100vw;
-			height: 38vh;
 			position: relative;
 			font-family: 'Roboto', sans-serif;
 			display: flex;
-			justify-content: space-around;
-			align-items: center;
-			padding-left: 10%;
+			flex-direction: column;
+			justify-content: space-between;
 
 			@media screen and (min-width: 600px) {
 				width: 70vw;
 				position: relative;
-				padding-left: 5%;
 			}
 
-
-			.article-text {
-				//line-height: 50px;
+			.article-background {
 				display: flex;
-				flex-direction: column;
+				align-items: center;
 				justify-content: space-around;
-				width: 60vw;
 
-				@media screen and (min-width: 600px) {
-					width: auto;
+				.article-text {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-around;
+					width: 60vw;
+					margin-top: 10%;
+					margin-left: 10%;
+
+					@media screen and (min-width: 600px) {
+						width: auto;
+						margin-bottom: 5%;
+					}
+
+					.article-headline,
+					.article-subline {
+						font-family: 'Roboto', sans-serif;
+						font-weight: 300;
+						font-size: 1.5rem;
+					}
+
+					.counter {
+						font-family: 'Roboto', sans-serif;
+						font-size: 3rem;
+						margin: 5% 0;
+					}
+
+					.category {
+						font-size: .7rem;
+						border: 1px solid #fff;
+						border-radius: 10px;
+						padding: 2% 5%;
+						margin: 0 auto;
+						margin-left: 0;
+						margin-top: 5%;
+						align-self: flex-start;
+					}
 				}
 
-				.article-headline,
-				.article-subline {
-					font-family: 'Roboto', sans-serif;
-					font-weight: 300;
-					font-size: 1.5rem;
+				.animation {
+					width: 40vw;
+
+					@media screen and (min-width: 600px) {
+						width: auto;
+					}
 				}
 
-				.counter {
-					font-family: 'Roboto', sans-serif;
-					font-size: 3rem;
-					margin: 5% 0;
-				}
-
-				.category {
-					font-size: .7rem;
-					border: 1px solid #fff;
-					border-radius: 10px;
-					padding: 2% 5%;
-					margin: 0 auto;
-					margin-left: 0;
-					margin-top: 5%;
-					align-self: flex-start;
-				}
 			}
 
-			.animation {
-				width: 40vw;
-
-				@media screen and (min-width: 600px) {
-					width: auto;
-				}
+			a {
+				text-decoration:  none;
 			}
 
 			.plus-button {
-				position: absolute;
-				right: 0;
-				bottom: 0;
 				color: #fff;
 				font-size: 2rem;
 				background: $blue;
@@ -222,163 +312,760 @@ $darkgray: #707070;
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				// path {
-				// 	fill: $blue;
-				// }
+				margin: 0 auto;
+				margin-right: 0;
+				margin-bottom: 0;
+
 				@media screen and (min-width: 600px) {
-					left: 0;
-					bottom: 0;
+					margin-left: 0;
 				}
 			}
 		}
 
-		.article1 {
-			background: $turquoise;
+		.headline {
+			background: $mediumlightpurple;
 			color: #fff;
 
-			.main-animation1 {
-
-			}
-
-			@media screen and (min-width: 600px) {
-				width: 45vw;
-				height: 40vh;
-			}
-
-		}
-
-		.article2 {
-			background: #fff;
-			color: $lightgray;
-			flex-direction: row-reverse;
-			text-align: right;
-			padding-right: 10%;
-
-			.main-animation2 {
-				background-image: url(../img/flan.png);
-				background-repeat: no-repeat;
-				background-size: contain;
-				// background-position: bottom;
-				align-self: flex-end;
-				width: 30%;
-				height: 10vh;
-				margin-bottom: 5%;
-				
-				@media screen and (min-width: 600px) {
-					background-position: bottom;
-					width: 40%;
-					height: 10vh;
-				}
-			}
-
-			@media screen and (min-width: 600px) {
-				flex-direction: row;
-				width: 25vw;
-				height: 40vh;
-				padding: 5%;
-				padding-right: 3%;
-				padding-top: 0;
+			.article-background {
 
 				.article-text {
+					margin-left: 0;
+					align-items: center;
+					margin-bottom: 5%;
 
-					.article-headline,
-					.article-subline {
-						font-size: 1.2rem;
-						text-align: left;
+					.gun-svg {
+						width: 200px;
+						height: 200px;
+						display: none;
 					}
 
 					.counter {
-						font-size: 2rem;
-						text-align: left;
+						text-align: center;
+						color: #E8D7A5;
+						font-size: 4rem;
+						margin: 0;
 					}
+
+					.headline-text {
+						text-align: center;
+						margin: 10% 0;
+					}
+
+					.memory {
+						text-align: center;
+						color: $lightpurple;
+						font-size: 0.8rem;
+					}
+
 				}
 
+				.main-animation1 {
+					background-image: url(../img/flan.png);
+					background-repeat: no-repeat;
+					background-size: contain;
+					background-position: center;
+					align-self: flex-end;
+					width: 40%;
+					height: 8vh;
+					margin-bottom: 5%;
+				}
 			}
 
-			.article-text {
+			@media screen and (min-width: 600px) {
+				height: 80vh;
 
-				.counter {
-					color: $turquoise;
+				.article-background {
+					height: 100%;
 
-					@media screen and (min-width: 600px) {
-						font-size: 2rem;
+					.article-text {
+
+						.counter {
+							font-size: 8rem;
+						}
+
+						.headline-text {
+							font-size: 1.5rem;
+							line-height: 40px;
+							width: 70%;
+							margin-bottom: 5%;
+						}
+
+						.memory {
+							font-size: 1rem;
+							width: 70%;
+						}
+					}
+				}
+			}
+		}
+
+		.subline-image {
+			width: 100vw;
+			height: 40vh;
+			background-image: url(../img/vigil.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			position: relative;
+
+			.subline-text {
+				position: absolute;
+				font-family: 'Roboto', sans-serif;
+				line-height: 25px;
+				color: #fff;
+				font-size: 1.2rem;
+				bottom: 5vh;
+				left: 5%;
+				width: 45%;
+			}
+
+
+		}
+
+		.joint-special-article1 {
+			display: flex;
+			flex-direction: column;
+
+			@media screen and (min-width: 600px) {
+				flex-direction: row;
+			}
+	
+			.special-article1 {
+				background: $lightpurple;
+				color: $darkpurple;
+
+				.article-background {
+					.article-text {
+						margin-left: 0;
+						width: 80vw;
+						.special-counter-parent {
+							display: flex;
+							align-items: center;
+						}
+
+					}
+					.special-animation1 {
+						background-image: url(../img/bookbag.png);
+						background-repeat: no-repeat;
+						background-size: contain;
+						background-position: center;
+						align-self: flex-end;
+						width: 40%;
+						height: 8vh;
+						margin-bottom: 5%;
 					}
 				}
 
-				.category-food {
-					color: $blue;
-					border-color: $blue;
-					margin-right: 0;
-					align-self: flex-end;
+				@media screen and (min-width: 600px) {
+					width: 30vw;
+					height: 40vh;
+
+					.article-background {
+
+						.article-text {
+							margin-left: 10%;
+							margin-right: 20%;
+							width: unset;
+
+							.article-headline,
+							.article-subline {
+								font-size: 1rem;
+							}
+
+							.special-counter-parent {
+								.counter {
+									font-size: 6rem;
+								}
+
+								.special-animation1 {
+									width: 40%;
+									height: 15vh;
+									margin-left: 2vw;
+								}
+								
+							}
+
+						}
+					}
+				}
+			}
+
+			.special-article2 {
+				background: $mediumlightpurple;
+				color: #fff;
+
+				.article-background {
+					.article-text {
+						width: 50%;
+						margin-top: 5%;
+
+						.article-headline,
+						.article-subline {
+							font-size: 1.2rem;
+						}
+
+						.special-counter-parent {
+							display: flex;
+							align-items: center;
+							margin-bottom: 10%;
+
+							& span {
+								font-size: 3rem;
+								margin-left: 10px;
+							}
+						}
+
+					}
+					.special-animation2 {
+						background-image: url(../img/flan.png);
+						background-repeat: no-repeat;
+						background-size: contain;
+						background-position: center;
+						align-self: flex-end;
+						width: 50%;
+						height: 8vh;
+						margin-bottom: 5%;
+					}
+				}
+
+				@media screen and (min-width: 600px) {
+					width: 40vw;
+					height: 40vh;
+
+					.article-background {
+
+						.article-text {
+							width: 50%;
+							margin-top: 10%;
+
+							.article-headline,
+							.article-subline {
+								font-size: 1rem;
+							}
+
+							.special-counter-parent {
+
+								.counter {
+									font-size: 5rem;
+								}
+								& span {
+									font-size: 5rem;
+								}
+							}
+
+						}
+					}
+				}
+			}
+		}
+
+		.joint-special-article2 {
+			display: flex;
+			flex-direction: column;
+
+			@media screen and (min-width: 600px) {
+				flex-direction: row;
+			}
+
+			.special-article3 {
+				background: $darkpurple;
+				color: #fff;
+
+				.article-background {
+					.article-text {
+						width: 100%;
+					}
+				}
+
+				@media screen and (min-width: 600px) {
+					width: 20vw;
+					height: 40vh;
+
+					.article-background {
+						height: 100%;
+
+						.article-text {
+
+							.article-headline,
+							.article-subline {
+							}
+
+							.counter {
+							}
+						}
+					}
+				}
+			}
+
+			.special-article4 {
+				background: $mediumpurple;
+				color: #fff;
+
+				.article-background {
+					.article-text {
+						width: 100%;
+					}
+				}
+
+				@media screen and (min-width: 600px) {
+					width: 25vw;
+					height: 40vh;
+
+					.article-background {
+						height: 100%;
+
+						.article-text {
+							text-align: center;
+							margin-left: 5%;
+							margin-right: 5%;
+
+							.article-headline,
+							.article-subline {
+								text-align: center;
+							}
+
+							.counter {
+								text-align: center;
+							}
+						}
+					}
+				}
+			}
+
+			.special-article5 {
+				background: $lighterpurple;
+				color: $darkpurple;
+
+				.article-background {
+					flex-direction: column; 
+					align-items: flex-start;
+
+					.special-counter-parent {
+						display: flex;
+						justify-content: space-between;
+						margin-left: 10%;
+						margin-top: 10%;
+						width: 90%;
+
+						.counter {
+							font-size: 4rem;
+						}
+
+
+						.special-animation5 {
+							background-image: url(../img/bullet.png);
+							background-repeat: no-repeat;
+							background-size: contain;
+							background-position: center;
+							align-self: flex-end;
+							width: 100%;
+							height: 8vh;
+							// margin-bottom: 5%;
+						}
+					}
+
+
+					.article-text {
+						margin-top: 5%;
+
+						.article-headline {
+							font-size: 1.2rem;
+						}
+
+						.article-subline {
+							font-size: 1rem;
+							margin-top: 5%;
+							color: $mediumlightpurple;
+						}
+					}
+				}
+
+				@media screen and (min-width: 600px) {
+					width: 25vw;
+					height: 40vh;
+
+					.article-background {
+						flex-direction: row;
+						height: 85%;
+
+						.special-counter-parent {
+							flex-direction: column;
+							align-items: center;
+							justify-content: space-around;
+							height: 85%;
+						}
+
+						.article-text {
+							margin-top: 10%;
+							margin-right: 10%;
+							margin-left: 5%;
+							justify-content: space-around;
+							height: 85%;
+
+							.article-headline {
+							}
+
+							.article-subline {
+								font-size: 1rem;
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+		.joint-article3 {
+			display: flex;
+			flex-direction: column;
+
+			@media screen and (min-width: 600px) {
+				flex-direction: row;
+			}
+
+			.article1 {
+				background: $turquoise;
+				color: #fff;
+
+				.article-background {
+					.article-text {
+
+					}
+					.main-animation1 {
+						background-image: url(../img/flan.png);
+						background-repeat: no-repeat;
+						background-size: contain;
+						background-position: center;
+						align-self: flex-end;
+						width: 40%;
+						height: 8vh;
+						margin-bottom: 5%;
+					}
+				}
+
+				@media screen and (min-width: 600px) {
+					width: 45vw;
+					height: 40vh;
+
+					.article-background {
+
+						.article-text {
+
+							.article-headline,
+							.article-subline {
+								// font-size: 1.2rem;
+								text-align: left;
+							}
+
+							.counter {
+								// font-size: 2rem;
+								text-align: left;
+							}
+						}
+					}
+				}
+			}
+
+			.article2 {
+				background: #fff;
+				color: $lightgray;
+
+				.article-background {
+
+					.article-text {
+
+						.counter {
+							color: $turquoise;
+						}
+
+						.category-food {
+							color: $blue;
+							border-color: $blue;
+						}
+					}
+
+					.main-animation2 {
+						background-image: url(../img/flan.png);
+						background-repeat: no-repeat;
+						background-size: contain;
+						background-position: center;
+						align-self: flex-end;
+						width: 40%;
+						height: 8vh;
+						margin-bottom: 5%;
+					}
+				}
+
+				@media screen and (min-width: 600px) {
+					width: 25vw;
+					height: 40vh;
+
+					.article-background {
+						.article-text {
+
+							.article-headline,
+							.article-subline {
+								font-size: 1.2rem;
+								text-align: left;
+							}
+
+							.counter {
+								font-size: 2rem;
+								text-align: left;
+							}
+						}
+
+						.main-animation2 {
+							background-position: bottom;
+							margin-right: 5%;
+						}
+					}
 				}
 
 				.plus-button {
 					background: $lightgray;
 				}
 			}
-
 		}
 
-		.article3 {
-			background: $lightergray;
-			color: black;
+		.joint-article1 {
+			display: flex;
 			flex-direction: column;
-			align-items: flex-start;
 
 			@media screen and (min-width: 600px) {
-				width: 30vw;
-				height: 60vh;
+				flex-direction: row;
 			}
 
-			.counter {
-				color: $blue;
-			}
-
-			.plus-button {
-				background: $darkgray;
-			}
-
-			.animation {
-				align-self: flex-end;
-				padding-right: 20%;
-			}
-		}
-
-		.article4 {
-			background: $blue;
-			color: #fff;
-
-			@media screen and (min-width: 600px) {
-				width: 40vw;
-				height: 30vh;
-			}
-
-			.counter {
-				color: #fff;
-			}
-
-			.plus-button {
-				background: $darkblue;
-			}
-		}
-
-		.article5 {
-			background: #fff;
-			color: black;
-
-			// @media screen and (min-width: 600px) {
-			// 	width: 40vw;
-			// 	height: 30vh;
-			// }
-
-			.counter {
+			.article3 {
+				background: $lightergray;
 				color: black;
+
+				.article-background {
+					.article-text{
+						.category-sport {
+							color: $blue;
+							border-color: $blue;
+						}
+						.counter {
+							color: $blue;
+							font-size: 4rem;
+						}
+					}
+					.main-animation3 {
+						background-image: url(../img/hotdog1.png);
+						background-repeat: no-repeat;
+						background-size: contain;
+						background-position: center;
+						//align-self: flex-end;
+						width: 40%;
+						height: 8vh;
+						margin-bottom: 5%;
+					}
+				}
+
+				@media screen and (min-width: 600px) {
+					width: 35vw;
+					height: 60vh;
+					// justify-content: flex-end;
+
+					.article-background {
+
+						.article-text {
+
+							.article-headline,
+							.article-subline {
+								font-size: 2rem;
+							}
+
+							.counter {
+								font-size: 3.5rem;
+							}
+						}
+						.main-animation3 {
+							background-position: bottom;
+							margin-right: 5%;
+						}
+					}
+				}
+
+				.plus-button {
+					background: $darkgray;
+				}
 			}
 
-			.plus-button {
-				background: $lightblue;
+			.joint-articles2 {
+				display: flex;
+				flex-direction: column;
+
+				.article4 {
+					background: $blue;
+					color: #fff;
+
+					.article-background {
+						.article-text{
+							.category-sport {
+								color: $blue;
+								border-color: $blue;
+							}
+						}
+						.main-animation4 {
+							background-image: url(../img/hotdog1.png);
+							background-repeat: no-repeat;
+							background-size: contain;
+							background-position: center;
+							align-self: flex-end;
+							width: 30%;
+							height: 8vh;
+							margin-bottom: 5%;
+						}
+					}
+
+
+					@media screen and (min-width: 600px) {
+						width: 35vw;
+						height: 30vh;
+			
+						.article-background {
+							.article-text {
+								//margin-top: 5%;
+
+								.article-headline,
+								.article-subline {
+									font-size: 1rem;
+								}
+
+								.counter {
+									color: #fff;
+									font-size: 2rem;
+								}
+							}
+							.main-animation4 {
+								background-position: bottom;
+							}
+						}
+					}
+
+					.plus-button {
+						background: $darkblue;
+					}
+				}
+
+				.article5 {
+					background: #fff;
+					color: black;
+
+					.article-background {
+						.article-text {				
+							.counter-parent {
+								display: flex;
+								align-items: center;
+
+								.counter {
+									font-size: 2rem;
+								}
+
+								span {
+									font-size: 2rem;
+								}
+
+								.counter {
+									color: black;
+									margin-right: 10px;
+								}
+							}
+
+							.category-culture {
+								color: $blue;
+								border-color: $blue;
+							}
+						}
+
+						.main-animation5 {
+							background-image: url(../img/ticket.png);
+							background-repeat: no-repeat;
+							background-size: contain;
+							background-position: center;
+							align-self: flex-end;
+							width: 40%;
+							height: 8vh;
+							margin-bottom: 5%;
+						}
+					}
+
+					@media screen and (min-width: 600px) {
+						width: 35vw;
+						height: 30vh;
+			
+						.article-background {
+							flex-direction: row-reverse;
+
+							.article-text {
+								margin-left: 0;
+								margin-right: 10%;
+
+								.article-headline,
+								.article-subline {
+									font-size: 1rem;
+								}
+
+								.counter-parent {
+									font-size: 1rem;
+
+									span {
+										font-size: 2rem;
+									}
+								
+									.counter {
+										font-size: 2rem;
+									}
+								}
+							}
+							.main-animation5 {
+								margin-left: 5%;
+							}
+						}
+					}
+
+					.plus-button {
+						background: $lightblue;
+					}
+				}
 			}
 		}
+	}
+
+	footer {
+		width: 100%;
+		background: #fff;
+		display: flex;
+		align-items: center;
+
+		h2 {
+			color: $mediumlightpurple;
+			margin: 5vh 10vw;
+			font-family: 'Roboto', sans-serif;
+			font-size: 0.8rem;
+			line-height: 15px;
+
+			@media screen and (min-width: 600px) {
+				margin-left: 5%;
+			}
+			
+			a {
+				text-decoration: none;
+				color: $mediumpurple;
+				font-weight: bold;
+			}
+		}
+
 	}
 }
 
@@ -400,7 +1087,13 @@ $darkgray: #707070;
 	.icons {
 		color: $darkgray;
 		font-size: 2rem;
+		transisiton: .4s all;
+		
+		&:hover {
+			color: $blue;
+		}
 	}
+
 }
 
 

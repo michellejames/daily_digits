@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- <link rel="stylesheet" href="dist/css/reset.css">
+		<link rel="stylesheet" href="dist/css/main.css"> -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+		<link rel="stylesheet" href="dist/css/app.css">
+	</head>
+	<body>
+
+		<div class="container-detail">
+			<div class="sidebar">
+				<a href="index.html" class="dd-logo"></a>
+				<div class="current-text">
+					<h2 class="current-weekday"></h2>
+					<div class="current-date">
+						<h1 class="current-month"></h1>
+						<h1 class="current-day"></h1>
+					</div>
+					<h2 class="current-year"></h2>
+					<div class="controlls">
+						<a href="index.html"><div class="arrow arrow-left"></div></a>
+					</div>
+				</div>
+				
+				<div class="social-media-sidebar">
+					<a href="#"><i class="icons fab fa-twitter"></i></a>
+					<a href="#"><i class="icons fab fa-facebook"></i></a>
+					<a href="#"><i class="icons fab fa-instagram"></i></a>
+				</div>
+			</div>
+			<div class="content-detail">
+				<div class="sticky-image">
+					<a href="index.html" class="home-button">
+						<i class="fas fa-angle-left"></i>
+						<p>Back to Daily Digits</p>
+					</a>
+				</div>
+
+				<ul class="grid effect-2" id="grid">
+					<li class="fact fact1">
+						<div class="fact-background">
+							<h2 class="fact-category">Statistics: <span>Culture</span></h2>
+							<div class="fact-wrapper">
+								<div class="fact-text">
+									<h1 class="fact-headline">Black Panther grossed</h1>
+									<div class="counter-parent">
+										<span>$</span>
+										<div class="counter" data-count="292"></div>
+										<span>M</span>
+									</div>
+									<h2 class="fact-subline">in it's <span>opening weekend</span></h2>
+									<div class="fact-divider"></div>
+									<p class="fact-detail">Black Panther recorded the highest pre-sale tickets sold for a superhero movie, outselling Captain America and Batman vs. Superman.</p>
+								</div>
+								<div class="animation fact-animation1"></div>
+							</div>
+						</div>
+					</li>
+					<li class="fact fact2">
+						<div class="fact-background">
+							<div class="fact-text">
+								<h2>Global Grossings</h2>
+							</div>
+							<div class="fact-statistic">
+								<div class="row row1">
+									<div class="country">Australia</div>
+									<div class="bar bar1">
+										<p>$21.2M</p>
+									</div>
+								</div>
+								<div class="row row2">
+									<div class="country">United Kingdom</div>
+									<div class="bar bar2">
+										<p>$44.2M</p>
+									</div>
+								</div>
+								<div class="row row3">
+									<div class="country">South Korea</div>
+									<div class="bar bar3">
+										<p>$39.3M</p>
+									</div>
+								</div>
+								<div class="row row4">
+									<div class="country">France</div>
+									<div class="bar bar4">
+										<p>$19.1M</p>
+									</div>
+								</div>
+								<div class="row row5">
+									<div class="country">Malaysia</div>
+									<div class="bar bar5">
+										<p>$8.5M</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="fact fact3">
+						<div class="fact-background">
+							<div class="fact-text">
+								<div class="counter-parent">
+									<div class="counter" data-count="23"></div>
+									<span>%</span>
+								</div>
+								<p class="fact-headline"><span>higher</span> than other Marvel Movies during pre-sale, beating out Homecoming: Spiderman</p>
+							</div>
+							<div class="fact-statistic">
+								<canvas id="doughnut-chart"></canvas>
+							</div>
+						</div>
+					</li>
+					<li class="fact fact4">
+						<div class="fact-background">
+							<div class="fact-text">
+								<div class="counter-parent">
+									<span>$</span>
+									<div class="counter" data-count="200"></div>
+									<span>M</span>
+								</div>
+								<h1 class="fact-headline">Production Budget</h1>
+							</div>
+							<div class="fact-text2">
+								<div class="animation fact-animation4"></div>
+								<h2 class="fact-subline">Black Panther broke even in pre-sales and opening weekend and is continuing to profit with sales increasingly globally.</h2>
+							</div>
+						</div>
+					</li>
+					<li class="fact fact5">
+						<div class="fact-background">
+							<div class="fact-text">
+								<h2 class="fact-headline">Number of Tickets overtime</h2>
+								<div class="animation fact-animation5"></div>
+							</div>
+							<div class="fact-statistic">
+								<canvas id="myChart"></canvas>
+								<p class="fact-statistic-text">Ticket sales represent global records.</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="social-media">
+			<a href="#"><i class="icons fab fa-twitter"></i></a>
+			<a href="#"><i class="icons fab fa-facebook"></i></a>
+			<a href="#"><i class="icons fab fa-instagram"></i></a>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+		<script src="src/js/jsonfile.js"></script>
+		<script src="vendor/gsap/minified/TweenMax.min.js"></script>
+		<script src="https://use.fontawesome.com/92ef1f4ebd.js"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		<script src="src/js/masonry.pkgd.min.js"></script>
+		<script src="src/js/imagesloaded.js"></script>
+		<script src="src/js/classie.js"></script>
+		<script src="src/js/AnimOnScroll.js"></script>
+		<!-- <script src="dist/js/main.js"></script> -->
+		<script src="src/js/app.js"></script>
+		<script src="src/js/detail_page.js"></script>
+		<!-- <script src="src/js/app.js"></script> -->
+
+	</body>
+</html>

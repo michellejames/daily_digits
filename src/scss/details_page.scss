@@ -1,0 +1,616 @@
+$blue: #4094EF;
+$lightblue: #6FD4FC;
+$darkblue: #416DB6;
+$lightgray: #C1C1C1;
+$lightergray: #F5F5F5;
+$turquoise: #5BD6FD;
+$darkgray: #707070;
+
+.container-detail {
+	display: flex;
+	flex-direction: column;
+
+	.sidebar {
+		width: 90vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		background: #fff;
+
+		@media screen and (min-width: 600px) {
+			width: 100vw;
+			height: 10vh;
+			z-index: 5;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			margin-left: 0;
+			position: fixed;
+		}
+
+		.dd-logo {
+			background-image: url(../img/logo.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: 50%;
+			height: 10vh;
+			margin: 0;
+			align-self: flex-start;
+			margin-left: 5%;
+			margin-top: 5%;
+
+			@media screen and (min-width: 600px) {
+				background-image: url(../img/logo.png);
+				background-repeat: no-repeat;
+				background-size: contain;
+				width: 33vw;
+				height: 8vh;
+				margin-top: 0;
+				margin-left: 2.5%;
+			}
+		}
+
+		.current-text {
+			margin-left: 10%;
+			font-family: 'Roboto', sans-serif;
+			margin-bottom: 10%;
+
+			@media screen and (min-width: 600px) {
+				display: flex;
+				margin-top: 0;
+				width: 33vw;
+				margin-bottom: 0;
+			}
+
+			& h1,
+			& h2 {
+				line-height: 35px;
+			}
+
+			.current-weekday {
+				color: $blue;
+				font-size: 1.2rem;
+				font-weight: 300;
+
+				@media screen and (min-width: 600px) {
+					font-size: 1rem;
+					color: $darkgray;
+					font-weight: 600;
+					margin-right: 0.5rem;
+				}
+			}
+
+			.current-date {
+				color: $blue;
+				font-size: 2rem;
+				display: flex;
+
+				@media screen and (min-width: 600px) {
+					font-size: 1rem;
+					color: $darkgray;
+					font-weight: 600;
+				}
+
+				.current-month {
+					margin-right: 0.5rem;
+				}
+
+				@media screen and (min-width: 600px) {
+					margin-right: 0;
+				}
+			}
+
+			.current-year {
+				color: $lightgray;
+				font-size: 1.2rem;
+
+				@media screen and (min-width: 600px) {
+					display: none;
+				}
+			}
+
+			.special-year {
+				color: $mediumlightpurple;
+				font-size: 1.2rem;
+			}
+		}
+
+		.controlls {
+			display: flex;
+			margin-top: 5%;
+
+			@media screen and (min-width: 600px) {
+				margin-top: unset;
+				align-items: center;
+				order: -1;
+			}
+
+			.arrow {
+				background-repeat: no-repeat;
+				background-size: contain;
+				width: 40px;
+				height: 15px;
+				transition: .4s all;
+			}
+
+			.arrow-left {
+				background-image: url(../img/arrow-unselected-left.png);
+				margin-right: 20px;
+
+				&:hover {
+					background-image: url(../img/arrow-selected-left.png);
+				}
+			}
+
+			.arrow-right {
+				background-image: url(../img/arrow-unselected-right.png);
+
+				&:hover {
+					background-image: url(../img/arrow-selected-right.png);
+				}
+			}
+		}
+
+		.social-media-sidebar {
+			display: flex;
+			margin-bottom: 100px;
+			display: none;
+
+			@media screen and (min-width: 600px) {
+				display: flex;
+				width: 33vw;
+				justify-content: flex-end;
+				margin-bottom: 0;
+				margin-right: 2.5%;
+			}
+
+			a {
+				margin: 3%;
+			}
+			
+			.icons {
+				color: $darkgray;
+				font-size: 2rem;
+				transition: .5s all;
+
+				&:hover {
+					color: $blue;
+				}
+
+				@media screen and (min-width: 600px) {
+					font-size: 1rem;
+					color: $lightgray;
+				}
+			}
+		}
+	}
+
+	.content-detail {
+		display: flex;
+		flex-direction: column;
+
+		@media screen and (min-width: 600px) {
+			flex-direction: row;
+			width: 100vw;
+			margin-top: 10vh;
+		}
+		
+
+		.sticky-image {
+			background-image: url(../img/BlackPanther.jpg);
+			background-repeat: no-repeat;
+			background-position: center -20px;
+			background-size: cover;
+			width: 100vw;
+			height: 30vh;
+
+
+			@media screen and (min-width: 600px) {
+				position: fixed;
+				width: 30vw;
+				height: 90vh;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			.home-button {
+				display: none;
+
+				@media screen and (min-width: 600px) {
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					width: 30vw;
+					height: 10vh;
+					background: #252525;
+					display: flex;
+					align-items: center;
+					padding-left: 5%;
+
+					& svg {
+						font-size: 1.5rem;
+						color: $blue;
+						margin-right: 5%;
+					}
+
+
+					& p {
+						font-family: 'Roboto', sans-serif;
+						color: #fff;
+					}
+				}	
+			}
+		}
+
+		.grid {
+			max-width: 69em;
+			list-style: none;
+			padding: 0;
+		}
+
+		.grid li {
+			display: block;
+			float: left;
+			// padding: 7px;
+			width: 100%;
+			opacity: 1;
+
+			@media screen and (min-width: 600px) {
+				width: 50%;
+			}
+		}
+
+		.fact {
+			font-family: 'Roboto', sans-serif;
+		}
+
+		.fact1 {
+			.fact-background {
+				background: #fff;
+				padding: 5%;
+
+
+				.fact-category {
+					text-transform: uppercase;
+					font-weight: bold;
+					font-size: .8rem;
+					color: $darkgray;
+					margin: 5% 0;
+
+					& span {
+						font-weight: normal;
+						color: $lightgray;
+					}
+				}
+
+				.fact-wrapper {
+					display: flex;
+
+					.fact-text {
+						display: flex;
+						flex-direction: column;
+						margin-left: 5%;
+						width: 70%;
+
+						.fact-headline {
+							color: $lightgray; 
+							font-size: 1.4rem;
+
+						}
+
+						.counter-parent {
+							display: flex;
+							margin: 5% 0;
+							color: $darkgray;
+
+							.counter {
+								font-size: 5rem;
+							}
+
+							& span {
+								font-size: 5rem;
+							}
+						}
+
+						.fact-subline {
+							font-size: 1.4rem;
+
+							& span {
+								color: $blue;
+							}
+						}
+
+						.fact-divider {
+							width: 20%;
+							height: 3px;
+							background: $blue;
+							margin: 10% 0;
+						}
+
+						.fact-detail {
+							font-weight: lighter;
+							color: $lightgray;
+							width: 90%;
+							line-height: 20px;
+							margin-bottom: 5%;
+						}
+					}
+
+					.fact-animation1 {
+						background-image: url(../img/ticket.png);
+						background-repeat: no-repeat;
+						background-size: contain;
+						background-position: center;
+						width: 40%;
+						height: 8vh;
+						align-self: flex-end;
+					}
+				}
+
+			}
+		}
+
+		.fact2 {
+			background: #EEEEEE;
+			padding: 5%;
+
+			.fact-background {
+				.fact-text {
+					font-size: 1.4rem;
+					font-weight: lighter;
+					margin-bottom: 10%;
+				}
+
+				.fact-statistic {
+					display: flex;
+					flex-direction: column;
+
+					.row {
+						display: flex;
+						align-items: center;
+						margin-bottom: 3%;
+
+						.country {
+							width: 40%;
+							font-size: .8rem;
+						}
+
+						.bar {
+							padding: 2% 0;
+							text-align: end;
+							border-radius: 3px;
+							font-size: .7rem;
+
+							& p {
+								margin-right: 15%;
+							}
+						}
+						
+						.bar1 {
+							background: #fff;
+							width: 35%;
+							color: $blue;
+						}
+
+						.bar2 {
+							background: $blue;
+							width: 60%;
+							color: #fff;
+						}
+
+						.bar3 {
+							background: #fff;
+							width: 55%;
+							color: $blue;
+						}
+
+						.bar4 {
+							background: $blue;
+							width: 30%;
+							color: #fff;
+						}
+
+						.bar5 {
+							background: #fff;
+							width: 20%;
+							color: $blue;
+						}
+					}
+
+				}
+			}
+		}
+
+		.fact3 {
+			.fact-background {
+				display: flex;
+				flex-direction: row-reverse;
+				align-items: center;
+				background: $blue;
+				color: #fff;
+				padding: 5%;
+
+				.fact-text {
+					display: flex;
+					flex-direction: column;
+					width: 60%;
+
+					.counter-parent {
+						display: flex;
+						margin-bottom: 5%;
+
+						.counter {
+							font-size: 3rem;
+						}
+
+						& span {
+							font-size: 3rem;
+						}
+
+					}
+
+					.fact-headline {
+						font-weight: lighter;
+						line-height: 20px;
+
+						& span {
+							font-weight: bold;
+						}
+
+					}
+				}
+
+				.fact-statistic {
+					width: 45%;
+					margin-right: 5%;
+					transform: rotate(45deg);
+					
+				}
+			}
+		}
+
+		.fact4 {
+			.fact-background {
+				background: #F5F5F5;
+				padding: 5%;
+				padding-left: 0;
+				display: flex;
+				flex-direction: column;
+
+				.fact-text {
+					margin-bottom: 10%;
+					padding-left: 5%;
+					margin-left: 5%;
+
+					.counter-parent {
+						display: flex;
+						color: $lightgray;
+
+						.counter {
+							font-size: 5rem;
+						}
+
+						& span {
+							font-size: 5rem;
+						}
+					}
+
+					.fact-headline {
+						color: $blue;
+						margin-top: 2.5%;
+						font-size: 1.5rem;
+						font-weight: lighter;
+					}
+				}
+
+				.fact-text2 {
+					display: flex;
+					overflow: hidden;
+
+					.fact-animation4 {
+						background-image: url(../img/panther.png);
+						background-repeat: no-repeat;
+						background-size: contain;
+						background-position: center;
+						width: 40%;
+						height: 15vh;
+						align-self: flex-end;
+						position: relative;
+						left: -20%;
+					}
+
+					.fact-subline {
+						font-weight: lighter;
+						color: $lightgray;
+						width: 55%;
+						line-height: 20px;
+					}
+				}
+			}
+		}
+
+		.fact5 {
+			.fact-background {
+				background: #fff;
+				color: $darkgray;
+				padding: 5%;
+
+				.fact-text {
+					display: flex; 
+					margin-bottom: 5%;
+
+					.fact-headline {
+						font-weight: lighter;
+						font-size: 1.2rem;
+
+					}
+					.fact-animation5 {
+						background-image: url(../img/scratch.png);
+						background-repeat: no-repeat;
+						background-size: contain;
+						background-position: center;
+						width: 40%;
+						height: 8vh;
+					}
+				}
+
+				.fact-statistic {
+
+					#myChart {
+						margin-bottom: 5%;
+					}
+
+					.fact-statistic-text {
+						font-size: .8rem;
+						font-weight: lighter;
+						text-align: center;
+						margin-bottom: 5%;
+					}
+				}
+			}
+		}
+
+
+
+		.grid li.shown,
+		.no-js .grid li,
+		.no-cssanimations .grid li {
+			opacity: 1;
+		}
+
+		.grid li a,
+		.grid li img {
+			outline: none;
+			border: none;
+			display: block;
+			max-width: 100%;
+		}
+
+		/* Effect 2: Move Up */
+		.grid.effect-2 li.animate {
+			-webkit-transform: translateY(200px);
+			transform: translateY(200px);
+			-webkit-animation: moveUp 0.65s ease forwards;
+			animation: moveUp 0.65s ease forwards;
+		}
+
+		@-webkit-keyframes moveUp {
+			0% { }
+			100% { -webkit-transform: translateY(0); opacity: 1; }
+		}
+
+		@keyframes moveUp {
+			0% { }
+			100% { -webkit-transform: translateY(0); transform: translateY(0); opacity: 1; }
+		}
+	}
+}
+
+
+
+
+
+
+
