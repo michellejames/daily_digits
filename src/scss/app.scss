@@ -346,43 +346,50 @@ body {
 				.article-text {
 					margin-left: 0;
 					align-items: center;
-					margin-bottom: 5%;
+					margin-bottom: 10%;
 
-					.gun-svg {
-						width: 200px;
-						height: 200px;
-						// display: none;
+					.parent-counter {
+						position: relative;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						margin: 10% 0;
+
+						.gun {
+							background-image: url(../img/gun.png);
+							background-repeat: no-repeat;
+							background-size: contain;
+							background-position: center;
+							display: flex;
+							justify-content: center;
+							width: 13vw;
+							height: 20vh;
+							display: none;
+							opacity: 0;
+							position: absolute;
+						}
+
+						.counter {
+							text-align: center;
+							color: #E8D7A5;
+							font-size: 4rem;
+							margin: 0;
+							position: absolute;
+						}
 					}
 
-					.counter {
-						text-align: center;
-						color: #E8D7A5;
-						font-size: 4rem;
-						margin: 0;
-					}
 
 					.headline-text {
 						text-align: center;
-						margin: 10% 0;
+						font-size: 1.2rem;
+					    margin: 10% 0;
 					}
 
 					.memory {
 						text-align: center;
 						color: $lightpurple;
-						font-size: 0.8rem;
+						font-size: 1rem;
 					}
-
-				}
-
-				.main-animation1 {
-					background-image: url(../img/flan.png);
-					background-repeat: no-repeat;
-					background-size: contain;
-					background-position: center;
-					align-self: flex-end;
-					width: 40%;
-					height: 8vh;
-					margin-bottom: 5%;
 				}
 			}
 
@@ -393,9 +400,36 @@ body {
 					height: 100%;
 
 					.article-text {
+						margin-top: 0;
 
-						.counter {
-							font-size: 8rem;
+						.parent-counter {
+							position: relative;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							margin: 10% 0;
+
+							.gun {
+								background-image: url(../img/gun.png);
+								background-repeat: no-repeat;
+								background-size: contain;
+								background-position: center;
+								display: flex;
+								justify-content: center;
+								width: 13vw;
+								height: 20vh;
+								display: none;
+								opacity: 0;
+								position: absolute;
+							}
+
+							.counter {
+								text-align: center;
+								color: #E8D7A5;
+								font-size: 8rem;
+								margin: 0;
+								position: absolute;
+							}
 						}
 
 						.headline-text {
@@ -416,12 +450,13 @@ body {
 
 		.subline-image {
 			width: 100vw;
-			height: 40vh;
-			background-image: url(../img/vigil.jpg);
+			height: 50vh;
+			background-image: url(../img/mass_img.png);
 			background-repeat: no-repeat;
 			background-size: cover;
 			background-position: center;
 			position: relative;
+			opacity: .9;
 
 			.subline-text {
 				position: absolute;
@@ -823,8 +858,12 @@ body {
 			.article2 {
 				background: #fff;
 				color: $lightgray;
+				overflow: hidden;
 
 				.article-background {
+					overflow: hidden;
+					justify-content: flex-start;
+					position: relative;
 
 					.article-text {
 
@@ -838,32 +877,53 @@ body {
 						}
 					}
 
-					.animations {
-						width: 40%;
-						height: 15vh;
-						
-						.main-animation2 {
-							background-image: url(../img/flan_drop.gif);
-							background-repeat: no-repeat;
-							background-size: contain;
-							background-position: center;
-							align-self: flex-end;
-							width: 40%;
-							height: 15vh;
-							margin-bottom: 5%;
-						}
+					.main-animation2 {
+						background-image: url(../img/flan.gif);
+						background-repeat: no-repeat;
+						background-size: contain;
+						background-position: center;
+						align-self: flex-end;
+						width: 40vw;
+						height: 30vh;
+						position: absolute;
+						margin-top: -15px;
+						margin-left: 60%;	
 
-						.main-animation2_2 {
-							background-image: url(../img/flan.png);
-							background-repeat: no-repeat;
-							background-size: contain;
-							background-position: center;
-							align-self: flex-end;
-							width: 40%;
-							height: 8vh;
-							margin-bottom: 5%;
+						@media screen and (min-width: 500px) {
+							width: 40vw;
+							height: 40vh;
 						}
 					}
+
+					// .animations {
+					// 	width: 40%;
+					// 	height: 15vh;
+					// 	position: relative;
+						
+					// 	.main-animation2 {
+					// 		background-image: url(../img/flan_drop_end.svg);
+					// 		background-repeat: no-repeat;
+					// 		background-size: contain;
+					// 		background-position: center;
+					// 		align-self: flex-end;
+					// 		width: 60vw;
+					// 		height: 55vh;
+					// 		top: -24vh;
+					// 		left: -40%;
+					// 		position: absolute;
+					// 	}
+
+					// 	.main-animation2_2 {
+					// 		background-image: url(../img/flan.png);
+					// 		background-repeat: no-repeat;
+					// 		background-size: contain;
+					// 		background-position: bottom;
+					// 		align-self: flex-end;
+					// 		width: 40%;
+					// 	    height: 20vh;
+					// 		margin-bottom: 5%;
+					// 	}
+					// }
 				}
 
 				@media screen and (min-width: 600px) {
@@ -886,9 +946,42 @@ body {
 						}
 
 						.main-animation2 {
-							background-position: bottom;
-							margin-right: 5%;
+							background-image: url(../img/flan.gif);
+							background-repeat: no-repeat;
+							background-size: contain;
+							background-position: center;
+							align-self: flex-end;
+							position: relative;
+							width: 20vw;
+							height: 40vh;
+							margin-left: 0;
+							// position: absolute;
+							// margin-top: -15px;
 						}
+
+						// .animations {
+
+						// 	.main-animation2 {
+						// 		background-image: url(../img/flan_drop_end.svg);
+						// 		background-repeat: no-repeat;
+						// 	    width: 30vw;
+						// 	    height: 60vh;
+						// 	    top: -25vh;
+						// 	    left: -150%;
+						// 	    margin-bottom: 5%;
+						// 	    position: absolute;
+						// 	}
+
+						// 	.main-animation2_2 {
+						// 		background-image: url(../img/flan.png);
+						// 		background-repeat: no-repeat;
+						// 	    background-size: contain;
+						// 	    background-position: bottom;
+						// 	    width: 60%;
+						// 	    height: 20vh;
+						// 	    margin-bottom: 5%;
+						// 	}
+						// }
 					}
 				}
 

@@ -21,6 +21,13 @@ $(".counter").each(function() {
   });  
 });
 
+TweenMax.to(".headline .counter", 1, {opacity: 0, delay: 5});
+TweenMax.to(".headline .gun", 1, {opacity: 1, display: "block", delay: 5});
+
+
+
+
+
 // let plusSigns = document.querySelectorAll(".plus-button");
 
 // for (var i = 0 ; i < plusSigns.length; i++) {
@@ -60,25 +67,25 @@ var doughnutChart2 = new Chart(document.getElementById("doughnut-chart_day2"), {
 });
 
 var tl = new TimelineLite();
-  tl.to("#1", 1, { morphSVG:"#gun-path1", fill:"#51598B"});
-  tl.to("#1", 1, { morphSVG:"#gun-path2", fill:"#E8D7A3"});
-  tl.to("#1", 1, { morphSVG:"#gun-path3", fill:"#EFE3BE"});
-  tl.to("#1", 1, { morphSVG:"#gun-path4", fill:"#EEE2BD"});
-  tl.to("#1", 1, { morphSVG:"#gun-path5", fill:"#F6F1DF"});
-  tl.to("#1", 1, { morphSVG:"#gun-path6", fill:"#F6EFDB"});
-  tl.to("#1", 1, { morphSVG:"#gun-path7", fill:"#E8D7A2"});
-  tl.to("#1", 1, { morphSVG:"#gun-path8", fill:"#E8D7A2"});
-  tl.to("#8", 1, { morphSVG:"#gun-path9", fill:"#E7D7A3"});
-  tl.to("#8", 1, { morphSVG:"#gun-path10", fill:"#E6D6A3"});
-  tl.to("#8", 1, { morphSVG:"#gun-path11", fill:"#E7D7A3"});
+  tl.to("#gun-path1", 2, { morphSVG:"#1", fill:"#51598B"}, 0.5);
+  tl.to("#gun-path2", 2, { morphSVG:"#1", fill:"#E8D7A3"}, 0.5);
+  tl.to("#gun-path3", 2, { morphSVG:"#1", fill:"#EFE3BE"}, 0.5);
+  tl.to("#gun-path4", 2, { morphSVG:"#1", fill:"#EEE2BD"}, 0.5);
+  tl.to("#gun-path5", 2, { morphSVG:"#1", fill:"#F6F1DF"}, 0.5);
+  tl.to("#gun-path6", 2, { morphSVG:"#1", fill:"#F6EFDB"}, 0.5);
+  tl.to("#gun-path7", 2, { morphSVG:"#1", fill:"#E8D7A2"}, 0.5);
+  tl.to("#gun-path8", 2, { morphSVG:"#1", fill:"#E8D7A2"}, 0.5);
+  tl.to("#gun-path9", 2, { morphSVG:"#8", fill:"#E7D7A3"}, 0.5);
+  tl.to("#gun-path10", 2, { morphSVG:"#8", fill:"#E6D6A3"}, 0.5);
+  tl.to("#gun-path11", 2, { morphSVG:"#8", fill:"#E7D7A3"}, 0.5);
 
-  tl.to("#8", 1, { morphSVG:"#gun-path12", fill:"#E7D7A3"});
+  // tl.to("#gun-path12", 1, { morphSVG:"#8", fill:"#E7D7A3"});
 
 
-  tl.to("#8", 1, { morphSVG:"#gun-path13", fill:"#F1F0EE"});
-  tl.to("#8", 1, { morphSVG:"#gun-path14", fill:"#F1F0EE"});
-  tl.to("#8", 1, { morphSVG:"#gun-path15", fill:"#F1F0EE"});
-  tl.to("#8", 1, { morphSVG:"#gun-path16", fill:"#F1F0EE"});
+  // tl.to("#gun-path13", 1, { morphSVG:"#8", fill:"#F1F0EE"});
+  // tl.to("#gun-path14", 1, { morphSVG:"#8", fill:"#F1F0EE"});
+  // tl.to("#gun-path15", 1, { morphSVG:"#8", fill:"#F1F0EE"});
+  // tl.to("#gun-path16", 1, { morphSVG:"#8", fill:"#F1F0EE"});
 
 
 
