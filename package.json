@@ -1,7 +1,7 @@
 {
-  "name": "circus-starter",
+  "name": "Daily Digits",
   "version": "1.2.3",
-  "description": "A good starting point for new Circus students",
+  "description": "A fun game called “Match-a-Rella” accompanying the “Cheesemonger Box” brand. Cheesemonger Box is a subscription box service that curates small batch artisan and traditional cheeses and delivers them to your door. The game is part of a special promotion and results in a one time free Cheesemonger Box.",
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
